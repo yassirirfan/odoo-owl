@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+  <t t-name="Systray_Counter_template" owl="1">
+   <div class="d-flex align-items-center m-2">
+        <button class="btn btn-danger" t-on-click="() => this.onChangeValue(-1)">-</button>
+             <span class="text-white m-2"><t t-esc="state.value"/></span>
+         <button class="btn btn-success" t-on-click="() => this.onChangeValue(1)">+</button>
+   </div>
+  </t>
+</templates>

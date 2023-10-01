@@ -3,14 +3,14 @@
     <t t-name="BoolBadge" owl="1">
 
         <span class="badge rounded-pill m-2 p-2" t-esc="trueValue"
-              t-att-class="props.value ? 'text-white':'text-black' "
+              t-att-class="props.value ? 'text-white' : 'text-black' "
               t-attf-style="background-color:{{props.value ? trueColor : defaultColor}}"
-        t-on-click = "()=>this.updateValue(true)"/>
+        t-on-click = "() => this.updateValue(true)"/>
 
         <span class="badge rounded-pill m-2 p-2" t-esc="falseValue"
-              t-att-class="props.value ? 'text-black': 'text-white'"
+              t-att-class="props.value ? 'text-black' : 'text-white'"
               t-attf-style="background-color:{{props.value ? defaultColor : falseColor}}"
-         t-on-click = "()=>this.updateValue(false)"
+         t-on-click = "() => this.updateValue(false)"
         />
 
     </t>

@@ -14,7 +14,7 @@
 .datepicker table tr td.focused {
    background: #eee;
    cursor: pointer;
-   border-radius: 18px;
+   border-radius: 16px;
 }
 .datepicker table tr td.active.active,
 .datepicker table tr td.active.highlighted.active,
@@ -22,9 +22,9 @@
 .datepicker table tr td.active:active {
    color: #fff;
    background-color: #7C7BAD;
-   border-radius:18px;
+   border-radius: 18px;
    border-color: #7C7BAD;
-   background-radius:11px;
+   background-radius: 11px;
 }
 .datepicker table tr td span {
    display: block;

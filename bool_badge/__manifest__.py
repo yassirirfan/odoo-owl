@@ -1,6 +1,6 @@
 {
     "name": "Bool Badge",
-"depends" : ["web"],
+    "depends" : ["web"],
     "version" : "16.0.1.0.0",
     'assets': {
         'web.assets_backend': [

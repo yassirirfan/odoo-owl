@@ -1,6 +1,6 @@
 {
     "name": "Date Picker Widget",
-"depends" : ["web"],
+    "depends" : ["base", "web"],
     "version" : "16.0.1.0.0",
     'assets': {
         'web.assets_backend': [

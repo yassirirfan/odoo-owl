@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="PostNotification" owl="1">
+        <div>
+            <span t-esc="props.post.id"/>
+            <br/>
+            <span t-esc="props.post.title"/>
+            <br/>
+            <span t-esc="props.post.body"/>
+            <br/>
+            <button t-on-click="() => this.showNotification">Notify</button>
+        </div>
+    </t>
+</templates>

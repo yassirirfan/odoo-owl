@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
+     <t t-name="awesome_dashboard.DashboardItem">
+        <div class="col-xl-3 col-lg-6" t-on-click="redirectView" t-att-style="'width: ' + 18*props.size + 'rem' ">
+            <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0"><t t-slot="title"/></h5>
+                            <span class="h2 font-weight-bold mb-0"><t t-slot="content"/></span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                <i class="fas fa-chart-bar"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
         <Layout className="'o_dashboard h-100'" display="{controlPanel: {} }">
             <t t-set-slot="control-panel-always-buttons">
                 <button t-on-click="openSettings" type="button"
                         class="btn btn-primary"
-                        title="Print">Print</button>
+                        title="Print">Customers</button>
                 <button t-on-click="showNotification"
                         type="button"
-                        class="btn btn-primary"
-                        title="Print">Add Notification</button>
+                        class="btn btn-secondary"
+                        title="Print">Reload</button>
             </t>
-            </Layout>
+            <div class="row">
+                <t t-foreach="data" t-as="info" t-key="info.id">
+                    <DashboardItem size="info.size">
+                        <t t-set-slot="title"><t t-esc="info.title"/>
+                        </t>
+                        <t t-set-slot="content"><t t-esc="info.content"/>
+                        </t>
+                    </DashboardItem>
+                </t>
+            </div>
+        </Layout>
     </t>
 
 </templates>

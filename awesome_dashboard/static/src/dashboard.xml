@@ -3,7 +3,15 @@
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
         <Layout className="'o_dashboard h-100'" display="{controlPanel: {} }">
-                        hello dashboard
+            <t t-set-slot="control-panel-always-buttons">
+                <button t-on-click="openSettings" type="button"
+                        class="btn btn-primary"
+                        title="Print">Print</button>
+                <button t-on-click="showNotification"
+                        type="button"
+                        class="btn btn-primary"
+                        title="Print">Add Notification</button>
+            </t>
             </Layout>
     </t>
 

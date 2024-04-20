@@ -2,28 +2,27 @@
 
 import { patch } from "@web/core/utils/patch";
 import { KanbanController } from "@web/views/kanban/kanban_controller";
-import { onWillUpdateProps } from "@odoo/owl";
-
+import { useEffect, useState, onMounted, onWillUnmount, onWillStart  } from "@odoo/owl";
+var intervalId;
 patch(KanbanController.prototype, {
     setup() {
         super.setup(...arguments);
         var self = this;
-        console.log(self)
-        onWillUpdateProps((nextProps) => console.log('PROPS UPDATED'));
-//        if (self.modelName === 'helpdesk.ticket') {
-//                setInterval(function () {
-//                    console.log("success")
-//                    rpc.query({
-//                        model: 'helpdesk.ticket',
-//                        method: 'search_count',
-//                        args: [[]],
-//                    }).then(function (currentCount) {
-//                        if (previousCount !== undefined && currentCount !== previousCount) {
-//                            self.update({}, {reload: true});
-//                        }
-//                        previousCount = currentCount;
-//                    });
-//                }, 30000);
-//        }
+        this.state = useState({current_count: false});
+        onMounted(async () => {
+            this.intervalId = setInterval(async () => {
+                var newCount = await self.model.root.fetchCount()
+                if (this.state.current_count){
+                    if (newCount != this.state.current_count){
+                        self.model.action.loadState();
+                    }
+                } else {
+                    this.state.current_count = newCount
+                }
+            }, 5000);
+        });
+        onWillUnmount(() => {
+            clearInterval(this.intervalId);
+        });
     },
 });

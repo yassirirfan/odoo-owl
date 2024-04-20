@@ -1,7 +1,7 @@
 /** @odoo-module */
 import { patch } from "@web/core/utils/patch";
 import { KanbanController } from "@web/views/kanban/kanban_controller";
-import { useEffect, useState, onMounted, onWillUnmount, onWillStart  } from "@odoo/owl";
+import {  useState, onMounted, onWillUnmount  } from "@odoo/owl";
 
 patch(KanbanController.prototype, {
     setup() {

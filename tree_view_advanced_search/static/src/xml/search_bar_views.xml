@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-inherit="web.ListRenderer" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_list_renderer')]//table[@t-ref='table']/thead/tr" position="after">
+            <tr>
+                <th/>
+                <t t-foreach="state.columns" t-as="column" t-key="column.id">
+                    <th t-if="column.type === 'field' and column.widget !== 'many2many_tags' and column.widget !== 'priority' and column.widget !== 'list_activity'">
+                        <div class="search-input">
+                            <input class="input_data" type="text" t-att-placeholder="column.label" t-on-keypress="(ev) => _onKeyPress(ev, column.name, this)"/>
+                            <i class="fa fa-search" t-on-click="(ev) => this._onClick_search(ev, column.name)"/>
+                            <i class="fa fa-close" t-on-click="(ev) => this._onClick_remove(ev, column.name)"/>
+                        </div>
+                    </th>
+                    <th t-else="">
+                        <div/>
+                    </th>
+                </t>
+                <th/>
+            </tr>
+        </xpath>
+    </t>
+</templates>

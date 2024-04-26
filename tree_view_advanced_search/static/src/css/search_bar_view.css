@@ -1,0 +1,23 @@
+.search-input {
+    position: relative;
+}
+
+.input_data {
+    padding-right: 30px;
+    border-radius:8px
+}
+.fa-search {
+    position: absolute;
+    top: 50%;
+    right: 29px;
+    transform: translateY(-50%);
+    color: #000000;
+}
+.fa-close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 17px;
+    color: #FF0000;
+}

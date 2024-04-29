@@ -18,7 +18,6 @@
             'tree_view_advanced_search/static/src/xml/search_bar_views.xml',
         ],
     },
-    # 'images': ['static/description/banner.jpg'],
     'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,

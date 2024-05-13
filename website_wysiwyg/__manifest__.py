@@ -10,7 +10,9 @@
     'application': True,
     'installable': True,
     'depends': ['base', 'web'],
-    'data': [],
+    'data': [
+        'views/website_homepage.xml',
+    ],
     'assets': {
         'web.assets_frontend': [
             'website_wysiwyg/static/src/js/wysiwyg.js',

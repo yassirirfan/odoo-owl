@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="api_bus.apiBus">
+        <div class="d-flex flex-column">
+        <div class="d-flex justify-content-center">
+            <h1>Bus Session</h1>
+        </div>
+            <div class="d-flex justify-content-center">
+            <h1 t-out="state.busVal"/>
+        </div>
+        </div>
+    </t>
+</templates>

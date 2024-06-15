@@ -1,15 +1,19 @@
+import json
+
 from odoo.http import Controller, route, request
 
 
-class MyController(Controller):
-
-    @route('/my_module/live_data', type='json', auth='none', methods=["POST"], csrf=False)
-    def live_data(self):
+class ApiBus(Controller):
+    @route('/trigger/bus/channel', type='json', auth='none',
+           methods=["POST"], csrf=False)
+    def trigger_bus_channel(self):
         data = request.httprequest.get_json()
         channel = "bust_test_channel"
-        message = {
+        request.env["bus.bus"]._sendone(channel, "notification", {
             "value": data,
             "channel": channel
-        }
-        request.env["bus.bus"]._sendone(channel, "notification", message)
-        return 1
+        })
+        return json.dumps({
+            'status': 'Success',
+            'message': 'Bus triggered'
+        })

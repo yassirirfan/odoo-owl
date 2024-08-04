@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="workshop_action_action" model="ir.actions.client">
+        <field name="name">Workshop Module</field>
+        <field name="tag">workshop_module.CounterTag</field>
+    </record>
+
+    <menuitem
+        id="workshop_action_action_menu"
+        name="Workshop Action"
+        sequence="1"
+        action="workshop_action_action"
+        />
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="workshop_module.Counter">
+        <div class="d-flex align-items-center justify-content-center">
+            <div t-ref="divContainer" style="width:350px; height:350px; padding:10px;">
+                <h1 t-out="state.product"/>
+                <span t-out="state.value"/><br/>
+                <button class="btn btn-primary" t-on-click="increment">increment(<t t-out="state.value"/>)</button><br/>
+                <button t-if="state.value > 0" class="btn btn-primary" t-on-click="decrement">decrement(<t t-out="state.value"/>)</button>
+
+
+                <input class="form-control" t-on-keyup="onChangeInput" />
+
+                <h1 t-ref="valueRef"/>
+
+
+                <div t-on-click.self="handleOnClickParent">
+                    Parent Div
+                    <div t-on-click="handleOnClickChild">
+                        Child Div
+                        <button>Click me</button>
+                    </div>
+                </div>
+
+<!--                <div  style="width:250px; height:250px"/>-->
+
+            </div>
+        </div>
+    </t>
+</templates>

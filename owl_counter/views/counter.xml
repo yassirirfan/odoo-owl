@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="workshop_action_action" model="ir.actions.client">
+    <record id="owl_counter_action" model="ir.actions.client">
         <field name="name">Counter App</field>
         <field name="tag">owl_counter.CounterTag</field>
     </record>
 
     <menuitem
-        id="workshop_action_action_menu"
+        id="owl_counter_action_menu"
         name="Workshop Action"
         sequence="1"
-        action="workshop_action_action"
+        action="owl_counter_action"
         />
 </odoo>

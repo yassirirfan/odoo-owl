@@ -61,4 +61,4 @@ export class Counter extends Component {
 }
 
 
-registry.category("actions").add("workshop_module.CounterTag", Counter);
+registry.category("actions").add("owl_counter.Counter", Counter);

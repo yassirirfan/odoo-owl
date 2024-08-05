@@ -3,7 +3,7 @@
     'version': '0.0.1',
     'depends': ['base'],
     'data': [
-        'views/views.xml',
+        'views/counter.xml',
     ],
     'assets': {
         'web.assets_backend': [

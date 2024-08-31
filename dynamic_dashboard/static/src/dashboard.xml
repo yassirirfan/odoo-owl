@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+     <t t-name="dynamic_dashboard.ListItem">
+        <div class="order-details">
+            <t t-log="props"/>
+            <div class="order-item">
+                <span class="label">Order Name:</span>
+                <span class="value"><t t-esc="props.data.name"/></span>
+            </div>
+            <div class="order-item">
+                <span class="label">Customer Name:</span>
+                <span class="value"><t t-esc="props.data.partner_id[1]"/></span>
+            </div>
+            <div class="order-item">
+                <span class="label">Total Amount:</span>
+                <span class="value">$<t t-esc="props.data.amount_total"/></span>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="dynamic_dashboard.SearchBar">
+        <div class="grid-top">
+            <div class="grid-item">
+                <input type="text" class="search-bar" placeholder="Search..." t-ref="inputRef"/>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="dynamic_dashboard.List">
+        <div t-attf-class="column column-{{props.position}}">
+            <SearchBar/>
+                <t t-foreach="state.filteredData" t-as="info" t-key="info.id">
+                    <ListItem data="info"/>
+                </t>
+        </div>
+    </t>
+
+    <t t-name="dynamic_dashboard.Container">
+        <Layout display="{controlPanel: {} }">
+            <div class="dynamic-container">
+                <div class="main-content">
+                    <List position="'left'" model="'sale.order'"/>
+                    <List position="'right'" model="'purchase.order'"/>
+                </div>
+            </div>
+        </Layout>
+    </t>
+
+</templates>

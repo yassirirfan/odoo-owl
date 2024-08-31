@@ -1,0 +1,193 @@
+.dynamic-container {
+  display: flex;
+  border: 2px solid #ccc;
+  padding: 10px;
+  flex-direction: column;
+
+  .grid-top {
+    display: grid;
+    //         grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      background-color: #f9f9f9; /* Optional: Gives a background to the grid item */
+      border-radius: 8px;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .search-bar::placeholder {
+      color: #888; /* Optional: Style the placeholder text */
+    }
+
+    .search-bar:focus {
+      border-color: #007bff; /* Optional: Change border color on focus */
+      outline: none;
+    }
+  }
+
+  .main-content {
+    display: flex;
+    flex: 1;
+
+    .column {
+      flex: 1;
+      padding: 10px;
+
+      &.column-left {
+        border-right: 2px solid #ccc;
+      }
+
+      .header,
+      .box {
+        background-color: #ccc;
+        margin: 10px 0;
+        height: 50px;
+      }
+      .order-details {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2px;
+        font-size: 1em;
+        color: #555;
+      }
+
+      .label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .value {
+        color: #000;
+      }
+
+      .header {
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .box {
+        height: 20px;
+        flex: 1;
+      }
+    }
+  }
+}
+
+format scss.dynamic-container {
+  display: flex;
+  border: 2px solid #ccc;
+  padding: 10px;
+  flex-direction: column;
+
+  .grid-top {
+    display: grid;
+    //         grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      background-color: #f9f9f9; /* Optional: Gives a background to the grid item */
+      border-radius: 8px;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .search-bar::placeholder {
+      color: #888; /* Optional: Style the placeholder text */
+    }
+
+    .search-bar:focus {
+      border-color: #007bff; /* Optional: Change border color on focus */
+      outline: none;
+    }
+  }
+
+  .main-content {
+    display: flex;
+    flex: 1;
+
+    .column {
+      flex: 1;
+      padding: 10px;
+
+      &.column-left {
+        border-right: 2px solid #ccc;
+      }
+
+      .header,
+      .box {
+        background-color: #ccc;
+        margin: 10px 0;
+        height: 50px;
+      }
+      .order-details {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2px;
+        font-size: 1em;
+        color: #555;
+      }
+
+      .label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .value {
+        color: #000;
+      }
+
+      .header {
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .box {
+        height: 20px;
+        flex: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <templates xml:space="preserve">
+        <t t-name="social_share.Container">
+            <!-- Header -->
+            <div class="post-container">
+                <!-- Header -->
+                <div class="post-header">
+                    <img src="/social_share/static/public/profile.jpeg" alt="User Avatar" class="avatar" />
+                    <div class="user-info">
+                      <span class="username">Mitchel</span>
+                      <span class="username-id">@mitchel_palmer</span>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="post-image">
+                    <img src="/social_share/static/public/post.jpeg" alt="Post Image" />
+                </div>
+                <!-- Interactions -->
+                <div class="post-actions">
+                    <button class="action-button">❤️</button>
+                    <button class="action-button">💬</button>
+                    <button class="action-button">🔗</button>
+                </div>
+                <!-- Comments Section -->
+                <div class="post-comments">
+                    <Comments/>
+                    <!-- Add Comment -->
+                    <div class="add-comment">
+                        <input t-ref="comment-input-ref" type="text" placeholder="Add a comment..." class="comment-input" />
+                        <button t-on-click="addComment" class="comment-submit">Post</button>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+    </templates>

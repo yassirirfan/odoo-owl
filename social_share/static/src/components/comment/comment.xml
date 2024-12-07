@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <templates xml:space="preserve">
+        <t t-name="social_share.Comments">
+                <div class="comments-list">
+                    <div class="comment">
+                        <div class="comment-row">
+                          <span class="comment-user">user1</span> Nice picture!
+                          <span class="reply-btn">reply</span>
+                        </div>
+                        <div class="replies">
+                            <div class="reply">
+                                <span class="comment-user">user2</span> Totally agree!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <span class="comment-user">user3</span> Amazing view!
+                    </div>
+            </div>
+        </t>
+</templates>

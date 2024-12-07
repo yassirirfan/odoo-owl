@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="action_social_share">
+      <field name="name">Social Share</field>
+      <field name="tag">social_share.container</field>
+    </record>
+
+    <menuitem name="Social Share " id="social_share.menu_root" groups="base.group_user"/>
+    <menuitem name="Dashboard" id="social_share.container_meny" parent="social_share.menu_root" action="social_share.action_social_share" sequence="1"/>
+  </data>
+</odoo>

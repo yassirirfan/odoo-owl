@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_interactive_data_table" model="ir.actions.client">
+        <field name="name">Product Data Table</field>
+        <field name="tag">interactive_data_table.action</field>
+    </record>
+
+
+    <menuitem id="menu_interactive_data_table_root"
+              name="Interactive Data Table"
+              sequence="100"/>
+
+    <menuitem id="menu_product_data_table"
+              name="Product Data Table"
+              parent="menu_interactive_data_table_root"
+              action="action_interactive_data_table"
+              sequence="10"/>
+
+</odoo>
